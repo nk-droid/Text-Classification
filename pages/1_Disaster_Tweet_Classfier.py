@@ -16,7 +16,6 @@ st.write("""
          """)
 
 tweet = st.text_input('Provide the text for prediction')
-print(tweet)
 
 def predict(tweet, model):
     
@@ -28,6 +27,6 @@ if st.button("Predict"):
     else:
         predicted_class = predict(tweet, model)
         if predicted_class > 0.5:
-            st.write("The text is related to disaster.")
+            st.error("The text is related to disaster.")
         else:
-            st.write("The text isn't related to disaster.")
+            st.success("The text isn't related to disaster.")
